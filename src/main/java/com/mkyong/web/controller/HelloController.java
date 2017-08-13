@@ -9,15 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HelloController {
 
-	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
-	public ModelAndView welcomePage() {
+	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+	public ModelAndView indexPage() {
 
 		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Custom Login Form");
-		model.addObject("message", "This is welcome page!");
-		model.setViewName("hello");
+		model.setViewName("login");
 		return model;
-
 	}
 
 	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
